@@ -4,7 +4,7 @@
 
 # cfdirector
 
-Reading and implementing [Securing C2 for RT Operations using Cloudflare](https://cgomezsec.com/blog/securing-c2-for-rt-operations-using-cloudflare) on my engagements is what inspired this tool. Shoutout to [Hexix23](https://github.com/Hexix23) for the writeup.
+Reading and implementing [Securing C2 for RT Operations using Cloudflare](https://cgomezsec.com/blog/securing-c2-for-rt-operations-using-cloudflare) in my own engagements is what inspired this tool. Shoutout to [Hexix23](https://github.com/Hexix23) for the writeup.
 
 cfdirector stands up a header-gated redirector in front of your C2 on Cloudflare. A public domain fronts a Worker that only passes traffic carrying the secret header baked into your profile, everything else gets a 404 or a redirect to somewhere else. Traffic that checks out rides an Access-protected Zero Trust tunnel back to the teamserver on operator infrastructure, so the box running it never has an inbound port open to the internet.
 
