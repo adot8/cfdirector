@@ -1,0 +1,6 @@
+.env
+state/
+workers/
+.wrangler/
+__pycache__/
+*.pyc

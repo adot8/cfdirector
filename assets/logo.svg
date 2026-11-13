@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 230" width="400" height="230" role="img" aria-label="Cloudflaredirector">
+  <defs>
+    <clipPath id="left"><rect x="0" y="0" width="200" height="230"/></clipPath>
+    <clipPath id="right"><rect x="200" y="0" width="200" height="230"/></clipPath>
+    <path id="cloud" d="M105 150 A30 30 0 0 1 112 91 A55 55 0 0 1 215 78 A45 45 0 0 1 290 112 A19 19 0 0 1 300 150 Z"/>
+  </defs>
+  <use href="#cloud" fill="#F6821F" clip-path="url(#left)"/>
+  <use href="#cloud" fill="#E5191F" clip-path="url(#right)"/>
+  <!-- redirect arrow pointer where the little star sits -->
+  <g fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M165 118 H228"/>
+    <path d="M208 98 L232 118 L208 138"/>
+  </g>
+  <text x="200" y="202" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#fff">Cloudfla<tspan fill="#E5191F">redirector</tspan></text>
+</svg>
