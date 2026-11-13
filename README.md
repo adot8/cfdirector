@@ -12,7 +12,7 @@ cfdirector stands up a header-gated redirector in front of your C2 on Cloudflare
   <img src="assets/diagram.svg" alt="cfdirector architecture: beacon traffic through a Cloudflare Worker header check and Access token, over a Zero Trust tunnel, to a C2 server with no open inbound ports on operator infrastructure" width="900">
 </p>
 
-It also does internal-only services: no Worker, no public domain, just a tunnel hostname behind your own Cloudflare Access login — good for team infra you want reachable only by whoever's logged in on the engagement.
+It also does internal-only services: no Worker, no public domain, just a tunnel hostname behind your own Cloudflare Access login, good for team infra you want reachable only by whoever's logged in on the engagement.
 
 ## Setup
 
@@ -21,7 +21,7 @@ git clone https://github.com/adot8/cfdirector.git && cd cfdirector
 cp .env.example .env && chmod 600 .env
 ```
 
-Fill in `CF_API_TOKEN` and `CF_ACCOUNT_ID` in `.env`. The token needs Account Tunnel Edit, Access Apps and Policies Edit, Access Service Tokens Edit, Zone DNS Edit and Zone Read. `OWNER_EMAIL` is only needed for `--internal` services — it's the operator email let through Access.
+Fill in `CF_API_TOKEN` and `CF_ACCOUNT_ID` in `.env`. The token needs Account Tunnel Edit, Access Apps and Policies Edit, Access Service Tokens Edit, Zone DNS Edit and Zone Read. `OWNER_EMAIL` is only needed for `--internal` services, it's the operator email let through Access.
 
 You also need `python3`, [cloudflared](https://github.com/cloudflare/cloudflared) and [wrangler](https://developers.cloudflare.com/workers/wrangler/) on your PATH. Worker deploys go through `wrangler login`, it prompts you the first time.
 
@@ -85,7 +85,7 @@ Multiple services can share one tunnel, good for running a teamserver and a payl
 
 ## Operator prompt
 
-Once the tunnel is up you land at a `cfdirector>` prompt. Everything here is live, cloudflared picks up the new ingress with no restart — swap the header mid-engagement if you think it's burned, add a service on the fly, nothing goes down.
+Once the tunnel is up you land at a `cfdirector>` prompt. Everything here is live, cloudflared picks up the new ingress with no restart, swap the header mid-engagement if you think it's burned, add a service on the fly, nothing goes down.
 
 ```
 list                                             show services with a test command each
